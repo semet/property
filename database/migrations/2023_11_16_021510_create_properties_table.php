@@ -27,6 +27,7 @@ return new class extends Migration
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
             $table->string('property_id');
+            $table->string('name');
             $table->enum('status', array_column(StatusEnum::cases(), 'value'));
             $table->float('price');
             $table->integer('room')->nullable();

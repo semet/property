@@ -17,6 +17,7 @@ class Property extends Model
         'location_id',
         'agent_id',
         'property_id',
+        'name',
         'status',
         'price',
         'room',

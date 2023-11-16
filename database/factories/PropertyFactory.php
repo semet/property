@@ -26,6 +26,7 @@ class PropertyFactory extends Factory
             'location_id' => Location::all()->random()->id,
             'agent_id' => Agent::all()->random()->id,
             'property_id' => Str::of(Str::random(10))->upper(),
+            'name' => fake()->sentence(),
             'status' => fake()->randomElement(array_column(StatusEnum::cases(), 'value')),
             'price' => fake()->numberBetween($min = 1500, $max = 6000),
             'room' => fake()->numberBetween($min = 2, $max = 6),
