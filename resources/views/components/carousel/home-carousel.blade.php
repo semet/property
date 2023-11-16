@@ -1,4 +1,4 @@
-<div id="controls-carousel" class="relative w-full overflow-hidden group px-2" data-carousel="slide">
+<div id="controls-carousel" class="relative w-full overflow-hidden group" data-carousel="slide">
     <x-partials.search-form />
     <div class="relative h-[600px] overflow-hidden md:h-[500px]">
         @foreach ($slides as $slide)

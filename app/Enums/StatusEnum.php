@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-enum ListingEnum: string
+enum StatusEnum: string
 {
     case DIJUAL = 'Dijual';
     case DISEWAKAN = 'Disewakan';

@@ -17,7 +17,12 @@ class AgentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->name(),
+            'phone' => fake()->phoneNumber(),
+            'email' => fake()->safeEmail(),
+            'password' => bcrypt('secret'),
+            'email_verified_at' => now(),
+            'photo' => fake()->imageUrl(category: 'person')
         ];
     }
 }

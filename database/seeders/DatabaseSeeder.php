@@ -20,7 +20,9 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             TypeSeeder::class,
-            LocationSeeder::class
+            LocationSeeder::class,
+            AgentSeeder::class,
+            PropertySeeder::class
         ]);
     }
 }
