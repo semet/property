@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('locations', function (Blueprint $table) {
             $table->ulid('id')->primary();
+            $table->string('slug')->unique();
             $table->string('name');
             $table->string('address')->nullable();
             $table->string('image')->nullable(); //TODO: Make it required
             $table->timestamps();
+            // $table->index(['id', 'slug']);
         });
     }
 

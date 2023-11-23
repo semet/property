@@ -13,10 +13,11 @@ class Property extends Model
     use HasFactory, HasUlids;
 
     protected $fillable = [
-        'type_id',
-        'location_id',
+        'type',
+        'location',
         'agent_id',
         'property_id',
+        'slug',
         'name',
         'status',
         'price',
@@ -30,14 +31,22 @@ class Property extends Model
         'is_available'
     ];
 
-    public function type(): BelongsTo
+    public function relatedType(): BelongsTo
     {
-        return $this->belongsTo(Type::class);
+        return $this->belongsTo(
+            related: Type::class,
+            foreignKey: 'type',
+            ownerKey: 'slug'
+        );
     }
 
-    public function location(): BelongsTo
+    public function relatedLocation(): BelongsTo
     {
-        return $this->belongsTo(Location::class);
+        return $this->belongsTo(
+            related: Location::class,
+            foreignKey: 'location',
+            ownerKey: 'slug'
+        );
     }
 
     public function agent(): BelongsTo

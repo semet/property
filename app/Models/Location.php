@@ -12,12 +12,22 @@ class Location extends Model
     use HasFactory, HasUlids;
 
     protected $fillable = [
+        'slug',
         'name',
         'address'
     ];
 
     public function properties(): HasMany
     {
-        return $this->hasMany(Property::class);
+        return $this->hasMany(
+            related: Property::class,
+            foreignKey: 'location',
+            localKey: 'slug'
+        );
+    }
+
+    public function agents(): HasMany
+    {
+        return $this->hasMany(Agent::class);
     }
 }

@@ -22,7 +22,7 @@ class FeaturedProperties extends Component
      */
     public function render(): View|Closure|string
     {
-        $properties = Property::limit(6)->get();
+        $properties = Property::orderBy('price', 'asc')->limit(6)->get();
         return view('components.home.featured-properties')->with('properties', $properties);
     }
 }

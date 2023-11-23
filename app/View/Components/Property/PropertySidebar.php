@@ -1,0 +1,27 @@
+<?php
+
+namespace App\View\Components\Property;
+
+use Closure;
+use Illuminate\Contracts\View\View;
+use Illuminate\View\Component;
+
+class PropertySidebar extends Component
+{
+    /**
+     * Create a new component instance.
+     */
+    public function __construct(
+        public $agent
+    ) {
+        //
+    }
+
+    /**
+     * Get the view / contents that represent the component.
+     */
+    public function render(): View|Closure|string
+    {
+        return view('components.property.property-sidebar');
+    }
+}

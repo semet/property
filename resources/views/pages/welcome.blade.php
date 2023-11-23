@@ -1,4 +1,4 @@
-<x-layouts.app>
+<x-layouts.app title="Home">
     {{-- Carousel --}}
     <x-carousel.home-carousel />
     {{-- Popular Places --}}
@@ -7,5 +7,10 @@
     <x-home.featured-properties />
     {{-- Featured Agents --}}
     <x-home.featured-agents />
-    <div class="h-64"></div>
+    {{-- Kenapa Memilih kami --}}
+    <x-home.why-choose-us />
+    {{-- Popular properties --}}
+    <x-home.popular-properties />
+    {{-- Our Partners --}}
+    <x-home.partners />
 </x-layouts.app>

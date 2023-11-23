@@ -2,6 +2,7 @@
 
 namespace App\View\Components\Partials;
 
+use App\Models\Location;
 use App\Models\Type;
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -23,6 +24,10 @@ class SearchForm extends Component
     public function render(): View|Closure|string
     {
         $types = Type::orderBy('name')->get();
-        return view('components.partials.search-form')->with('types', $types);
+        $locations = Location::orderBy('name')->get();
+
+        return view('components.partials.search-form')
+            ->with('types', $types)
+            ->with('locations', $locations);
     }
 }

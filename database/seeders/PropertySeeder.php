@@ -13,33 +13,33 @@ class PropertySeeder extends Seeder
      */
     public function run(): void
     {
-        Property::factory(100)->create()
+        Property::factory(200)->create()
             ->each(function (Property $property) {
                 $property->images()->createMany([
                     [
                         'property_id' => $property->id,
                         'url' => fake()->numberBetween($min = 1, $max = 9),
-                        'alt' => fake()->sentence()
+                        'alt' => fake()->sentence(3)
                     ],
                     [
                         'property_id' => $property->id,
                         'url' => fake()->numberBetween($min = 1, $max = 9),
-                        'alt' => fake()->sentence()
+                        'alt' => fake()->sentence(3)
                     ],
                     [
                         'property_id' => $property->id,
                         'url' => fake()->numberBetween($min = 1, $max = 9),
-                        'alt' => fake()->sentence()
+                        'alt' => fake()->sentence(3)
                     ],
                     [
                         'property_id' => $property->id,
                         'url' => fake()->numberBetween($min = 1, $max = 9),
-                        'alt' => fake()->sentence()
+                        'alt' => fake()->sentence(3)
                     ],
                     [
                         'property_id' => $property->id,
                         'url' => fake()->numberBetween($min = 1, $max = 9),
-                        'alt' => fake()->sentence()
+                        'alt' => fake()->sentence(3)
                     ]
                 ]);
             });

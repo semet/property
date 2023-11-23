@@ -22,11 +22,12 @@ class PropertyFactory extends Factory
     public function definition(): array
     {
         return [
-            'type_id' => Type::all()->random()->id,
-            'location_id' => Location::all()->random()->id,
+            'type' => Type::all()->random()->slug,
+            'location' => Location::all()->random()->slug,
             'agent_id' => Agent::all()->random()->id,
             'property_id' => Str::of(Str::random(10))->upper(),
-            'name' => fake()->sentence(),
+            'slug' => Str::of(fake()->sentence(5))->slug(),
+            'name' => fake()->sentence(5),
             'status' => fake()->randomElement(array_column(StatusEnum::cases(), 'value')),
             'price' => fake()->numberBetween($min = 1500, $max = 6000),
             'room' => fake()->numberBetween($min = 2, $max = 6),

@@ -6,8 +6,8 @@
             </a>
         </li>
         <li>
-            <a href="" class="text-blue-500 text-xl lg:text-2xl">
-                <i class="fa-brands fa-square-twitter"></i>
+            <a href="" class="text-gray-500 text-xl lg:text-2xl">
+                <i class="fa-brands fa-square-x-twitter"></i>
             </a>
         </li>
         <li>

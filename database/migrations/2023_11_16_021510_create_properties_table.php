@@ -13,20 +13,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('properties', function (Blueprint $table) {
-            $table->ulid('id')->primary();
-            $table->foreignUlid('type_id')
-                ->constrained()
-                ->cascadeOnUpdate()
-                ->cascadeOnDelete();
-            $table->foreignUlid('location_id')
-                ->constrained()
-                ->cascadeOnUpdate()
-                ->cascadeOnDelete();
+            $table->ulid('id');
+            $table->string('type');
+            $table->foreign('type')->references('slug')->on('types');
+            $table->string('location');
+            $table->foreign('location')->references('slug')->on('locations');
             $table->foreignUlid('agent_id')
                 ->constrained()
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
             $table->string('property_id');
+            $table->string('slug');
             $table->string('name');
             $table->enum('status', array_column(StatusEnum::cases(), 'value'));
             $table->float('price');
@@ -39,6 +36,7 @@ return new class extends Migration
             $table->longText('description');
             $table->boolean('is_available');
             $table->timestamps();
+            $table->index(['id', 'type', 'location']);
         });
     }
 

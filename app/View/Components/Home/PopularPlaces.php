@@ -22,7 +22,7 @@ class PopularPlaces extends Component
      */
     public function render(): View|Closure|string
     {
-        $locations = Location::limit(8)->get();
+        $locations = Location::withCount('properties')->orderBy('properties_count', 'DESC')->limit(8)->get();
         return view('components.home.popular-places')->with('locations', $locations);
     }
 }

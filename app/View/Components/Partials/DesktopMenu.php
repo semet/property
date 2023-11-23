@@ -30,7 +30,7 @@ class DesktopMenu extends Component
         $this->menus = [
             [
                 'label' => 'Home',
-                'url' => '#'
+                'url' => route('homepage')
             ],
             [
                 'label' => 'Tentang Kami',
@@ -38,23 +38,23 @@ class DesktopMenu extends Component
             ],
             [
                 'label' => 'Rumah',
-                'url' => '#'
+                'url' => route('listing-by-type', 'rumah')
             ],
             [
                 'label' => 'Apartemen',
-                'url' => '#'
+                'url' => route('listing-by-type', 'apartemen')
             ],
             [
                 'label' => 'Tanah',
-                'url' => '#'
+                'url' => route('listing-by-type', 'tanah')
             ],
             [
                 'label' => 'Gudang',
-                'url' => '#'
+                'url' => route('listing-by-type', 'gudang')
             ],
             [
                 'label' => 'Ruko',
-                'url' => '#'
+                'url' => route('listing-by-type', 'ruko')
             ],
             [
                 'label' => 'Hubungi Kami',

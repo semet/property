@@ -12,11 +12,16 @@ class Type extends Model
     use HasFactory, HasUlids;
 
     protected $fillable = [
+        'slug',
         'name'
     ];
 
     public function properties(): HasMany
     {
-        return $this->hasMany(Property::class);
+        return $this->hasMany(
+            related: Property::class,
+            foreignKey: 'type',
+            localKey: 'slug'
+        );
     }
 }

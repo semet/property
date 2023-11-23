@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('types', function (Blueprint $table) {
             $table->ulid('id')->primary();
+            $table->string('slug')->unique();
             $table->string('name');
             $table->timestamps();
+            // $table->index(['id', 'slug']);
         });
     }
 

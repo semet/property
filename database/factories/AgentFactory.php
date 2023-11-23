@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Location;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,12 +18,13 @@ class AgentFactory extends Factory
     public function definition(): array
     {
         return [
+            'location_id' => Location::all()->random()->id,
             'name' => fake()->name(),
             'phone' => fake()->phoneNumber(),
             'email' => fake()->safeEmail(),
             'password' => bcrypt('secret'),
             'email_verified_at' => now(),
-            'photo' => fake()->imageUrl(category: 'person')
+            'photo' => 'a-' . fake()->numberBetween($min = 1, $max = 8) . '.png'
         ];
     }
 }

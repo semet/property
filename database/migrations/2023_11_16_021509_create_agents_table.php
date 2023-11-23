@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('agents', function (Blueprint $table) {
             $table->ulid('id')->primary();
+            $table->foreignUlid('location_id')
+                ->constrained()
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
             $table->string('name');
             $table->string('phone')->unique();
             $table->string('email')->unique();
