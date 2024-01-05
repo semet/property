@@ -21,10 +21,10 @@
                         @foreach($types as $type)
                             <tr>
                                 <td>{{ $loop->iteration + $types->firstItem() - 1 }}</td>
-                                <td>{{ $type->name }} property</td>
-                                <td>{{ $type->properties_count }}</td>
+                                <td>{{ $type->name }} </td>
+                                <td>{{ $type->properties_count }} property</td>
                                 <td class="table-action">
-                                    <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
+                                    <a href="{{ route('admin.type.edit', $type->slug) }}" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
                                     <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                 </td>
                             </tr>
@@ -32,7 +32,7 @@
                         </tbody>
                     </table>
 
-                    <div>
+                    <div class="mt-2">
                         {{ $types->links('pagination::bootstrap-5') }}
                     </div>
 

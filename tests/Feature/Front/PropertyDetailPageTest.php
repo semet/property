@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Front;
 
+use App\Models\Property;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -9,12 +10,14 @@ use Tests\TestCase;
 class PropertyDetailPageTest extends TestCase
 {
     /**
-     * A basic feature test example.
+     * @test
      */
-    public function test_example(): void
+    public function itDisplaysCorrectProperty(): void
     {
-        $response = $this->get('/');
+        $property = Property::first();
+        $response = $this->get(route('property', $property->slug));
 
         $response->assertStatus(200);
+        $response->assertSee($property->name);
     }
 }

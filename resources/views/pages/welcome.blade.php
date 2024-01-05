@@ -9,6 +9,8 @@
     <x-home.featured-agents />
     {{-- Kenapa Memilih kami --}}
     <x-home.why-choose-us />
+    {{-- counter --}}
+    <x-home.counter />
     {{-- Popular properties --}}
     <x-home.popular-properties />
     {{-- Our Partners --}}

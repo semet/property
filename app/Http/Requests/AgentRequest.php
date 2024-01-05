@@ -27,7 +27,19 @@ class AgentRequest extends FormRequest
             'name' => 'required',
             'phone' => 'required',
             'email' => 'required|email',
-            'photo' => [File::types(['jpg', 'png'])]
+            'photo' => [File::types(['jpg', 'jpeg', 'png'])]
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'location_id.required' => 'ID Lokasi tidak boleh kosong',
+            'name.required' => 'Nama tidak boleh kosong',
+            'phone.required' => 'No. telepon tidak boleh kosong',
+            'email.required' => 'Email tidak boleh kosong',
+            'email.email' => 'Gunakan email yang valid',
+            'photo' => 'File harus bertipe JPG,JPEG, PNG'
         ];
     }
 }

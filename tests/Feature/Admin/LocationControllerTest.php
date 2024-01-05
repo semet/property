@@ -43,6 +43,22 @@ class LocationControllerTest extends TestCase
         $this->assertDatabaseCount('locations', 10);
     }
 
+    /**
+    * @test
+    */
+    public function itCannotSaveLocationWithInvalidInput(): void
+    {
+        $admin = Admin::factory()->create();
+
+        $response = $this->actingAs($admin, 'admin')->post(route('admin.location.store'), [
+            'name' => '',
+            'address' => ''
+        ]);
+
+        $response->assertInvalid(['name', 'address']);
+
+    }
+
     /** @test */
     public function itStoresALocationWithPhoto()
     {
@@ -76,35 +92,29 @@ class LocationControllerTest extends TestCase
     /**
     * @test
     */
-    public function itUpdatesTheLocation(): void
+    public function itUpdatesLocation(): void
     {
-        // Mock the Storage facade
-        Storage::fake('public');
-        // Create a mock LocationRequest with the necessary data
-        $request = new LocationRequest([
+        Storage::fake('public/location');
+
+        // Create a sample photo file
+        $photo = UploadedFile::fake()->image('location_photo.jpg');
+
+        $location = Location::factory()->create();
+
+        $data = [
             'name' => 'Test Location',
-            'address' => 'Test Address',
-            'photo' => UploadedFile::fake()->image('test_image.jpg')
-        ]);
+            'address' => '123 Test St',
+            'photo' => $photo,
+        ];
+        // Act
+        $admin = Admin::factory()->create();
 
-        // Create a mock Location instance
-        $location = Location::factory()->create([
-            'name' => 'Old Name',
-            'address' => 'Old Address',
-            'image' => UploadedFile::fake()->image('old_image.jpg')
-        ]);
+        $response = $this->actingAs($admin, 'admin')->post(route('admin.location.update', $location), $data);
 
-        // Call the update function
-        $controller = new LocationController(); // Replace YourLocationController with the actual controller name
-        $controller->update($request, $location);
+        // Assert
+        $response->assertRedirectToRoute('admin.location.index');
 
-        // Assert that the location has been updated correctly
-        $this->assertEquals('test-location', $location->slug);
-        $this->assertEquals('Test Location', $location->name);
-        $this->assertEquals('Test Address', $location->address);
-
-        // Assert that the image file has been uploaded and old image deleted
-        Storage::disk('public')->assertMissing('location/old_image.jpg');
-//        Storage::disk('public')->assertExists('location/'. $location->image);
+        Storage::disk('public')->assertMissing('location/' . $location->image);
+        Storage::disk('public')->assertExists('location/' .Str::of(now()->toDateString())->replace('-', '_').'_'. $data['name'].'.jpg');
     }
 }

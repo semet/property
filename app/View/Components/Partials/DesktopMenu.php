@@ -34,7 +34,7 @@ class DesktopMenu extends Component
             ],
             [
                 'label' => 'Tentang Kami',
-                'url' => '#'
+                'url' => route('about')
             ],
             [
                 'label' => 'Rumah',

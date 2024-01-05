@@ -1,4 +1,4 @@
-<div class="grid grid-cols-4 gap-14 py-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-14 py-4">
     {{-- Logo and taglines --}}
     <div class="flex flex-col gap-6">
         <img src="{{ asset('assets/images/logo-light.png') }}" alt="Logo" width="150">
@@ -95,7 +95,9 @@
         </p>
         <div class="flex items-center">
             <input type="text" name="search" id="search" class="h-[44px] rounded-l-md">
-            <button class="bg-brand-50 px-2 py-3 rounded-r-md text-gray-200 text-sm hover:bg-pink-800">Subscribe</button>
+            <button class="bg-brand-50 px-4 py-3 rounded-r-md text-gray-200 text-sm hover:bg-pink-800">
+                <i class="fa-solid fa-rss"></i>
+            </button>
         </div>
     </div>
 </div>

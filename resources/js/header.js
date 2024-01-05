@@ -7,16 +7,10 @@ $(window).on("scroll", function () {
     if (scroll > 250) {
         header
             .removeClass("h-[100px] shadow-sm")
-            .addClass(
-                "h-[70px] shadow-lg transition-all ease-in-out duration-500"
-            );
+            .addClass("h-[70px] shadow-lg");
     } else {
         header
-            .removeClass(
-                "h-[70px] shadow-lg transition-all ease-in-out duration-500"
-            )
-            .addClass(
-                "h-[100px] shadow-sm transition-all ease-in-out duration-500"
-            );
+            .removeClass("h-[70px] shadow-lg")
+            .addClass("h-[100px] shadow-sm");
     }
 });

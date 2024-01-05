@@ -14,7 +14,8 @@ class Location extends Model
     protected $fillable = [
         'slug',
         'name',
-        'address'
+        'address',
+        'image'
     ];
 
     public function properties(): HasMany

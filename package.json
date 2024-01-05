@@ -16,6 +16,8 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "aos": "^3.0.0-beta.6",
+        "counterup2": "^2.0.2",
         "jquery": "^3.7.1",
         "swiper": "^11.0.4"
     }

@@ -1,9 +1,9 @@
 <div class="flex flex-col gap-4 h-min px-4 py-6 bg-white shadow-md rounded-md">
     <h2 class="text-2xl font-semibold text-gray-600">Temukan property anda</h2>
     <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700">
-    <form action="{{ route('search-properties') }}" method="get" class="flex flex-col gap-8">
+    <form action="{{ route('search-properties') }}" method="get" class="flex flex-col md:flex-row lg:flex-col gap-8">
         {{-- Status --}}
-        <div class="flex gap-4 items-center">
+        <div class="flex flex-row md:flex-col gap-4 items-start">
             <div class="block text-sm font-medium text-gray-600">Status</div>
             <div class="flex gap-2">
                 <div class="flex items-center">
@@ -22,7 +22,7 @@
             </div>
         </div>
         {{-- Tipe --}}
-        <div>
+        <div class="flex-1">
             <label for="type" class="block mb-2 text-sm font-medium text-gray-600">Tipe Property</label>
             <select id="type" name="type" class="bg-gray-50 border border-gray-300 text-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="semua">Semua</option>
@@ -32,7 +32,7 @@
             </select>
         </div>
         {{-- Lokasi --}}
-        <div>
+        <div class="flex-1">
             <label for="location" class="block mb-2 text-sm font-medium text-gray-600">Lokasi</label>
             <select id="location" name="location" class="bg-gray-50 border border-gray-300 text-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option>Pilih Lokasi</option>
@@ -42,6 +42,6 @@
             </select>
         </div>
         {{-- Btn --}}
-        <button type="submit" class="text-white font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 shadow-md bg-gradient-to-r from-indigo-700 to-indigo-600 hover:bg-gradient-to-r hover:from-indigo-900 hover:to-indigo-800">Search</button>
+        <button type="submit" class="text-white font-medium md:place-self-end lg:place-self-auto rounded-lg h-11 text-sm px-5 py-2.5 mb-2 md:mb-0 lg:mb-2 shadow-md bg-gradient-to-r from-indigo-700 to-indigo-600 hover:bg-gradient-to-r hover:from-indigo-900 hover:to-indigo-800">Search</button>
     </form>
 </div>

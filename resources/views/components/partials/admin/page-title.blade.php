@@ -8,7 +8,7 @@
                     <li class="breadcrumb-item active">Starter</li>
                 </ol>
             </div>
-            <h4 class="page-title">Starter</h4>
+            <h4 class="page-title">{{ $title }}</h4>
         </div>
     </div>
 </div>

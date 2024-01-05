@@ -8,7 +8,7 @@
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         @foreach ($properties as $property)
-            <div class="flex flex-col md:flex-row xl:flex-row bg-white rounded-md overflow-hidden group">
+            <div class="flex flex-col md:flex-row xl:flex-row bg-white rounded-md overflow-hidden group" data-aos="fade-up">
                 <div class="w-full relative overflow-hidden">
                     <div class="absolute top-0 left-0 p-1.5 z-10 rounded-br-md bg-brand-50">
                         <span class="text-sm text-gray-100">{{ $property->status }}</span>

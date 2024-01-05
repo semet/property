@@ -15,7 +15,7 @@
         </div>
         <div class="swiper-wrapper py-4">
             @foreach ($agents as $agent)
-                <div class="swiper-slide flex flex-col overflow-hidden rounded-md bg-white shadow-md">
+                <div class="swiper-slide flex flex-col overflow-hidden rounded-md bg-white shadow-md" data-aos="fade-up">
                     <div class="w-full relative">
                         <div class="absolute top-0 px-2 py-1 bg-brand-50 text-gray-100 rounded-br-md">
                             <span class="text-sm"> {{ $agent->properties_count }} listing</span>

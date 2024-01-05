@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Front\AboutController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\ListingController;
 use App\Http\Controllers\Front\PropertyController;
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('homepage');
+Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/search', [SearchController::class, 'search'])->name('search-properties');
 Route::get('/property/{property:slug}', [PropertyController::class, 'index'])->name('property');
 Route::get('/listing/{type:slug?}', [ListingController::class, 'index'])->name('listing-by-type');

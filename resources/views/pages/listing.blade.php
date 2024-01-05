@@ -1,5 +1,5 @@
 <x-layouts.app title="Listing">
-    <div class="flex flex-col gap-16 px-40 py-10">
+    <div class="flex flex-col gap-16 secondary-padding py-8">
         {{-- top --}}
         <div class="flex flex-col gap-6">
             {{-- breadcrumb --}}
@@ -8,7 +8,7 @@
             <x-partials.page-title title="Listing" />
         </div>
         {{-- content --}}
-        <div class="flex justify-between gap-4 w-full">
+        <div class="flex flex-col-reverse lg:flex-row md:justify-between gap-4 w-full">
             {{-- left --}}
             <div class="flex-1 flex flex-col gap-4 h-min">
                 <div class="flex justify-between items-center py-2">
@@ -27,7 +27,7 @@
                 @if ($properties->isNotEmpty())
                     <div class="flex flex-col gap-4">
                         @foreach ($properties as $property)
-                            <div class="flex flex-col md:flex-row xl:flex-row bg-white rounded-md shadow-md overflow-hidden group">
+                            <div class="flex flex-col lg:flex-row bg-white rounded-md shadow-md overflow-hidden group">
                                 <div class="w-full relative overflow-hidden">
                                     <div class="absolute top-0 left-0 p-1.5 z-10 rounded-br-md bg-brand-50">
                                         <span class="text-sm text-gray-100">{{ $property->status }}</span>
@@ -37,7 +37,7 @@
                                     </div>
                                     <img src="{{ asset('assets/images/properties/' . $property->images->first()->url . '.jpg') }}" alt="{{ $property->name }}" class="w-full h-full object-cover group-hover:scale-105 transition-all ease-in-out duration-200">
                                 </div>
-                                <article class="flex flex-col gap-3 p-4 w-full">
+                                <article class="flex flex-col justify-between gap-3 p-4 w-full">
                                     <a href="{{ route('property', $property) }}" class="text-lg lg:text-2xl xl:text-lg text-gray-800 group-hover:text-brand-50">{{ $property->name }}</a>
                                     <div class="flex items-center gap-2 text-gray-500">
                                         <i class="fa-light fa-location-dot text-sm"></i>

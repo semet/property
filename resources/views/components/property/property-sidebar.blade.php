@@ -1,4 +1,4 @@
-<div class="flex flex-col gap-4 h-min px-5 py-6 bg-white shadow-md rounded-md w-1/3">
+<div class="flex flex-col gap-4 h-min px-5 py-6 bg-white shadow-md rounded-md w-full lg:w-1/3">
     <h2 class="text-2xl text-gray-700">Informasi Agent</h2>
     <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700">
     <div class="flex flex-col items-center gap-2">

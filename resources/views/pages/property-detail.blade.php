@@ -1,7 +1,7 @@
 <x-layouts.app :title="$property->name">
-    <div class="flex flex-col gap-16 px-40 py-10">
+    <div class="flex flex-col gap-16 secondary-padding py-10">
         <x-partials.breadcrumb />
-        <div class="flex justify-between gap-4">
+        <div class="flex flex-col lg:flex-row justify-between gap-4">
             {{-- left --}}
             <div class="flex flex-col w-full gap-8">
                 <div class="flex flex-col w-full">

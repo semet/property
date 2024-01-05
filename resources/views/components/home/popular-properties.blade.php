@@ -15,7 +15,7 @@
         </div>
         <div class="swiper-wrapper py-4">
             @foreach ($properties as $property)
-                <div class="swiper-slide flex flex-col overflow-hidden rounded-md bg-white shadow-md">
+                <div class="swiper-slide flex flex-col overflow-hidden rounded-md bg-white shadow-md" data-aos="fade-up">
                     <div class="w-full relative">
                         <img src="{{ asset('assets/images/properties/' . $property->images->first()->url . '.jpg') }}" alt="" class="w-full h-full object-cover">
                     </div>

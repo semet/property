@@ -1,7 +1,8 @@
-<li class="side-nav-item">
-    <a href="index.html" class="side-nav-link">
-        <i class="uil-home-alt"></i>
-        <span class="badge bg-success float-end">5</span>
-        <span> Dashboards </span>
-    </a>
-</li>
+@foreach($menus as $menu)
+    <li class="side-nav-item">
+        <a href="{{ $menu['url'] }}" class="side-nav-link">
+            <i class="uil-home-alt"></i>
+            <span> {{ $menu['label'] }} </span>
+        </a>
+    </li>
+@endforeach

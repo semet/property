@@ -9,7 +9,7 @@
     <div class="partner-swiper overflow-hidden mx-auto px-0.5 relative group">
         <div class="swiper-wrapper py-4">
             @foreach ($partners as $partner)
-                <div class="swiper-slide bg-white rounded-md shadow-md" style="background-image: url('asset('assets/images/partners/' . $partner['name'] . '.png')')">
+                <div class="swiper-slide bg-white rounded-md shadow-md" style="background-image: url('asset('assets/images/partners/' . $partner['name'] . '.png')')" data-aos="fade-up">
                     <img src="{{ asset('assets/images/partners/' . $partner['name'] . '.png') }}" class="w-full" alt="">
                 </div>
             @endforeach

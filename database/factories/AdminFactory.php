@@ -17,7 +17,13 @@ class AdminFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->name('male'),
+            'phone' => fake()->phoneNumber(),
+            'phone_verified_at' => now(),
+            'email' => fake()->safeEmail(),
+            'email_verified_at' => now(),
+            'password' => bcrypt('123'),
+            'photo' => fake()->imageUrl
         ];
     }
 }

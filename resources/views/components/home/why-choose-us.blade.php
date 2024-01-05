@@ -7,7 +7,7 @@
         <h5 class="text-gray-500 text-sm">Beberapa alasan kenapa anda wajib memilih kami</h5>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
-        <article class="flex flex-col gap-4 items-center bg-white shadow-md rounded-md px-6 py-4">
+        <article class="flex flex-col gap-4 items-center bg-white shadow-md rounded-md px-6 py-4" data-aos="fade-up">
             <div class="py-5 px-4 bg-brand-50 rounded-full shadow-md my-4">
                 <i class="fa-sharp fa-regular fa-city text-5xl text-white"></i>
             </div>
@@ -15,7 +15,7 @@
             <h3 class="text-xl font-semibold text-gray-600 text-center">Wide Renge Of Properties</h3>
             <p class="text-base font-light text-gray-500 text-center">lorem ipsum dolor sit amet, consectetur pro adipisici consectetur debits adipisicing lacus consectetur Business Directory.</p>
         </article>
-        <article class="flex flex-col gap-4 items-center bg-white shadow-md rounded-md px-6 py-4">
+        <article class="flex flex-col gap-4 items-center bg-white shadow-md rounded-md px-6 py-4" data-aos="fade-up">
             <div class="py-5 px-4 bg-brand-50 rounded-full shadow-md my-4">
                 <i class="fa-light fa-handshake text-5xl text-white"></i>
             </div>
@@ -23,7 +23,7 @@
             <h3 class="text-xl font-semibold text-gray-600 text-center">Trusted by thousands</h3>
             <p class="text-base font-light text-gray-500 text-center">lorem ipsum dolor sit amet, consectetur pro adipisici consectetur debits adipisicing lacus consectetur Business Directory.</p>
         </article>
-        <article class="flex flex-col gap-4 items-center bg-white shadow-md rounded-md px-6 py-4">
+        <article class="flex flex-col gap-4 items-center bg-white shadow-md rounded-md px-6 py-4" data-aos="fade-up">
             <div class="py-5 px-4 bg-brand-50 rounded-full shadow-md my-4">
                 <i class="fa-sharp fa-regular fa-money-check-dollar-pen text-5xl text-white"></i>
             </div>
@@ -31,7 +31,7 @@
             <h3 class="text-xl font-semibold text-gray-600 text-center">Financing made easy</h3>
             <p class="text-base font-light text-gray-500 text-center">lorem ipsum dolor sit amet, consectetur pro adipisici consectetur debits adipisicing lacus consectetur Business Directory.</p>
         </article>
-        <article class="flex flex-col gap-4 items-center bg-white shadow-md rounded-md px-6 py-4">
+        <article class="flex flex-col gap-4 items-center bg-white shadow-md rounded-md px-6 py-4" data-aos="fade-up">
             <div class="py-5 px-4 bg-brand-50 rounded-full shadow-md my-4">
                 <i class="fa-regular fa-map-location-dot text-5xl text-white"></i>
             </div>

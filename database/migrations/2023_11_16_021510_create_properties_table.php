@@ -15,9 +15,17 @@ return new class extends Migration
         Schema::create('properties', function (Blueprint $table) {
             $table->ulid('id');
             $table->string('type');
-            $table->foreign('type')->references('slug')->on('types');
+            $table->foreign('type')
+                ->references('slug')
+                ->on('types')
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
             $table->string('location');
-            $table->foreign('location')->references('slug')->on('locations');
+            $table->foreign('location')
+                ->references('slug')
+                ->on('locations')
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
             $table->foreignUlid('agent_id')
                 ->constrained()
                 ->cascadeOnUpdate()

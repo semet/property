@@ -13,6 +13,7 @@ class Agent extends Model
     use HasFactory, HasUlids;
 
     protected $fillable = [
+        'location_id',
         'name',
         'phone',
         'email',

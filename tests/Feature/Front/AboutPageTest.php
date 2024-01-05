@@ -9,12 +9,13 @@ use Tests\TestCase;
 class AboutPageTest extends TestCase
 {
     /**
-     * A basic feature test example.
+     * @test
      */
-    public function test_example(): void
+    public function itDisplaysProperText(): void
     {
-        $response = $this->get('/');
+        $response = $this->get(route('about'));
 
         $response->assertStatus(200);
+        $response->assertSee('Tentang Kami');
     }
 }

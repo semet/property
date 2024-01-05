@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\File;
 
 class LocationRequest extends FormRequest
 {
@@ -11,7 +12,7 @@ class LocationRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return auth()->guard('admin')->check();
     }
 
     /**
@@ -22,7 +23,18 @@ class LocationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required',
+            'address' => 'required',
+            'photo' => [File::types(['jpg', 'jpeg', 'png'])]
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'name.required' => 'Nama lokasi tidak boleh kosong',
+            'address.required' => 'Alamat lokasi tidak boleh kosong',
+            'photo' => 'File harus bertipe JPG,JPEG, PNG'
         ];
     }
 }
